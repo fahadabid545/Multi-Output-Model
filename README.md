@@ -4,7 +4,7 @@ This project uses a pre-trained VGG16 model to perform multi-output prediction o
 
 ---
 
-## 🧠 Description
+## Description
 
 The model performs:
 - **Age Prediction** as a regression task.
@@ -12,7 +12,7 @@ The model performs:
 
 ---
 
-## ⚙️ Feature Engineering
+## Feature Engineering
 
 Before training, each image undergoes the following preprocessing and augmentation:
 
@@ -21,25 +21,15 @@ Before training, each image undergoes the following preprocessing and augmentati
 - **Augmentations**:
   - Horizontal flip
   - Brightness adjustment
-  - Contrast, hue, and saturation variation
+  - Contrast, and saturation variation
   - Small random rotation (±15°)
 
 These techniques increase dataset variability and help the model generalize better.
 
 ---
 
-## 🛠️ Fine-Tuning
 
-- A **pre-trained VGG16** is used as the base (with `include_top=False`).
-- The base is **frozen** (non-trainable) during training.
-- Two separate branches (heads) are added:
-  - One for **age regression**
-  - One for **gender classification**
-- The model is trained jointly on both tasks with weighted losses.
-
----
-
-## 🧱 Model Architecture
+## Model Architecture
 
 ```bash
                +-----------------------+
